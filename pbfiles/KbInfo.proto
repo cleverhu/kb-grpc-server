@@ -1,0 +1,19 @@
+syntax = "proto3";
+package services;
+
+message KbInfoRequest{
+  // @inject_tag: json:"kb_id"
+  repeated int64 id = 1;
+}
+
+message KbInfoResponse{
+  // @inject_tag: json:"result"
+  bool result =1;
+}
+
+service KbInfoService{
+  rpc UpdateKbDetailList(KbInfoRequest) returns(KbInfoResponse){};
+
+}
+
+
